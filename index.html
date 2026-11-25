@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10204e">
+<meta name="description" content="Catalogue d’EPI, vêtements de travail et chaussures de sécurité au Maroc. Consultez les fiches techniques et préparez une demande de devis avec BF Equipment PRO.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_MA">
+<meta property="og:site_name" content="BF Equipment PRO">
+<meta property="og:title" content="EPI et vêtements de travail au Maroc | BF Equipment PRO">
+<meta property="og:description" content="Catalogue d’EPI, vêtements professionnels et chaussures de sécurité. Consultez les fiches techniques et préparez votre demande de devis.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EPI et vêtements de travail au Maroc | BF Equipment PRO">
+<meta name="twitter:description" content="Catalogue d’EPI, vêtements professionnels et chaussures de sécurité. Consultez les fiches techniques et préparez votre demande de devis.">
+<title>EPI et vêtements de travail au Maroc | BF Equipment PRO</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "BF Equipment PRO",
+  "description": "Équipements de protection individuelle et vêtements professionnels.",
+  "telephone": "+212668598710",
+  "email": "bfequipementpro@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "RP4011",
+    "postalCode": "10150",
+    "addressLocality": "Aïn Attig",
+    "addressCountry": "MA"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "https://schema.org/Monday",
+      "https://schema.org/Tuesday",
+      "https://schema.org/Wednesday",
+      "https://schema.org/Thursday",
+      "https://schema.org/Friday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    "https://www.instagram.com/bfequipementpro/"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="catalogue.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-header" id="accueil"><div class="wrap top">
+<a href="#accueil" aria-label="BF Equipment PRO, accueil"><img class="logo" src="assets/logo.png" alt="BF Equipment PRO"></a>
+<nav aria-label="Navigation principale"><a href="#catalogue">Catalogue</a><a href="#conseils">Guides et conseils</a><a href="#contact">Contact</a></nav>
+<button class="button dark" id="open-quote" type="button">Ma commande <span class="count" id="quote-count">0</span></button>
+</div></header>
+<main id="contenu">
+<section class="hero" aria-labelledby="hero-title">
+<div class="hero-photos" aria-hidden="true">
+<img class="hero-photo active" src="assets/travail-chantier.webp" alt="" fetchpriority="high">
+<img class="hero-photo" src="assets/travail-atelier.webp" alt="" decoding="async">
+<img class="hero-photo" src="assets/travail-logistique.webp" alt="" decoding="async">
+</div>
+<div class="wrap hero-inner">
+<div class="hero-copy">
+<p class="kicker">ÉQUIPEMENTS DE PROTECTION · VÊTEMENTS PROFESSIONNELS</p>
+<h1 id="hero-title">Votre partenaire en équipements de protection et vêtements professionnels</h1>
+<p class="lead">Trouvez les équipements adaptés à votre activité et réunissez vos références dans une seule demande de commande.</p>
+<a href="#catalogue" class="button yellow">Explorer le catalogue</a>
+</div>
+</div></section>
+<section class="wrap section" id="catalogue">
+<div class="section-head"><div><p class="kicker">PROTECTION ET TENUES PROFESSIONNELLES</p><h2>Catalogue produits</h2></div><p>Recherchez une référence, comparez les fiches techniques et préparez votre commande.</p></div>
+<p class="catalogue-intro">Retrouvez les équipements de protection individuelle (EPI) et tenues professionnelles : casques et lunettes, gants, chaussures et bottes de sécurité, protections auditives et respiratoires, équipements antichute, vêtements de travail et signalisation. Consultez les fiches techniques disponibles et préparez une demande de devis auprès de BF Equipment PRO, à Aïn Attig au Maroc.</p>
+<div class="filters">
+<label class="search">Rechercher un produit<input id="search" type="search" placeholder="Casque, gants, VSPL-1012…"></label>
+<label>Catégorie<select id="category"><option value="">Toutes les catégories</option></select></label>
+</div>
+<div class="result-row"><p id="result-count" role="status"></p><button type="button" id="reset-filters" class="text-button" hidden>Effacer les filtres</button></div>
+<div id="products" class="products"></div>
+</section>
+<section class="guides" id="conseils"><div class="wrap section">
+<h2>Guides et conseils</h2>
+<div class="advice">
+<details><summary>Choisir un équipement de protection</summary><p>Identifiez les risques du poste, puis vérifiez les caractéristiques, limites et tailles dans la fiche technique. Confirmez la compatibilité des équipements portés ensemble.</p></details>
+<details><summary>Vérifier un engin avant la prise de poste</summary><p>Suivez le manuel du fabricant et les procédures du site. Contrôlez les points ci-dessous. En cas de défaut de sécurité, immobilisez l’engin et signalez-le selon la procédure du site.</p>
+<form id="inspection">
+<label><input type="checkbox"> Rechercher les fuites, dommages et pièces desserrées.</label>
+<label><input type="checkbox"> Vérifier les pneus ou les chenilles et la fixation de l’accessoire.</label>
+<label><input type="checkbox"> Contrôler la ceinture, les protections et l’accès au poste.</label>
+<label><input type="checkbox"> Vérifier l’éclairage, les alarmes et les aides à la visibilité.</label>
+<label><input type="checkbox"> Dégager la zone et confirmer le plan de circulation.</label>
+<div class="check-actions"><output id="check-progress" aria-live="polite">0 sur 5 vérifiés</output><button class="text-button" type="reset">Réinitialiser</button></div>
+</form></details>
+<details><summary>Préparer une intervention avec un engin de chantier</summary>
+<p><strong>Pelle hydraulique.</strong> Confirmez le repérage des réseaux enterrés et la stabilité du sol. Maintenez les personnes hors du rayon de rotation.</p>
+<p><strong>Chargeuse compacte.</strong> Vérifiez le verrouillage de l’accessoire et la visibilité. Respectez les limites de pente et de déplacement.</p>
+<p><strong>Chariot télescopique.</strong> Consultez le tableau de charges de la configuration utilisée. Vérifiez le sol, les dégagements en hauteur et l’itinéraire.</p></details>
+</div>
+</div></section>
+</main>
+<footer class="site-footer" id="contact">
+<div class="wrap footer-main">
+<div class="footer-brand">
+<a href="#accueil" aria-label="BF Equipment PRO, accueil"><img class="logo" src="assets/logo.png" alt="BF Equipment PRO"></a>
+<p>Équipements de protection individuelle et vêtements professionnels.</p>
+</div>
+<nav class="footer-nav" aria-label="Navigation de pied de page">
+<h2>Explorer</h2>
+<a href="#catalogue">Catalogue</a>
+<a href="#conseils">Guides et conseils</a>
+<button class="footer-link" id="footer-order" type="button">Voir ma commande</button>
+</nav>
+<div class="footer-contact">
+<h2>Nous contacter</h2>
+<a href="tel:+212668598710">+212 668 598 710</a>
+<button class="footer-link" id="email-contact" type="button" data-destination="mailto:bfequipementpro@gmail.com">bfequipementpro@gmail.com</button>
+<a href="https://www.instagram.com/bfequipementpro/" target="_blank" rel="noopener">@bfequipementpro sur Instagram</a>
+<button class="button yellow" id="whatsapp-contact" type="button" data-destination="https://wa.me/212668598710">Écrire sur WhatsApp</button>
+</div>
+<div class="footer-location">
+<h2>Nous trouver</h2>
+<address>RP4011, 10150 Aïn Attig, Maroc</address>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=V2QM%2B7R%20Temara%2C%20Morocco" target="_blank" rel="noopener">Voir le repère V2QM+7R</a>
+<p>Du lundi au vendredi, de 9 h à 18 h</p>
+<a class="button footer-map" href="https://www.google.com/maps/dir/?api=1&amp;destination=V2QM%2B7R%20Temara%2C%20Morocco" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+</div>
+</div>
+<div class="wrap footer-bottom"><span>© BF Equipment PRO</span><a href="#accueil">Retour en haut</a></div>
+</footer>
+<dialog id="product-dialog" aria-labelledby="product-title"><div class="dialog-top"><h2 id="product-title"></h2><form method="dialog"><button class="button neutral">Fermer</button></form></div><div id="product-detail"></div></dialog>
+<dialog id="quote-dialog" aria-labelledby="quote-title">
+<div class="dialog-top"><h2 id="quote-title">Ma demande de commande</h2><form method="dialog"><button class="button neutral">Fermer</button></form></div>
+<div id="quote-items"></div>
+<form id="quote-form">
+<p class="form-note">Le nom, l’adresse e-mail et le téléphone sont obligatoires.</p>
+<div class="fields">
+<label>Nom<input name="nom" autocomplete="name" required></label>
+<label>Entreprise (facultatif)<input name="entreprise" autocomplete="organization"></label>
+<label>Adresse e-mail<input name="email" type="email" autocomplete="email" required></label>
+<label>Téléphone<input name="telephone" type="tel" autocomplete="tel" required></label>
+</div>
+<label>Votre besoin<textarea name="besoin" rows="3" placeholder="Précisez les tailles, les couleurs, les quantités ou la personnalisation souhaitée."></textarea></label>
+<p class="form-note">Choisissez votre mode d’envoi. Votre demande s’ouvre dans votre messagerie, prête à être vérifiée et envoyée.</p>
+<div class="detail-actions">
+<button class="button whatsapp" type="submit" name="canal" value="whatsapp">Continuer sur WhatsApp</button>
+<button class="button dark" type="submit" name="canal" value="email">Continuer par e-mail</button>
+</div>
+<p id="quote-status" role="status"></p>
+</form>
+</dialog>
+<div id="notice" role="status" class="notice" hidden></div>
+</body>
+</html>

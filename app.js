@@ -2,7 +2,6 @@ const $ = (selector) => document.querySelector(selector);
 const products = $("#products");
 const search = $("#search");
 const category = $("#category");
-const productDialog = $("#product-dialog");
 const quoteDialog = $("#quote-dialog");
 const quoteItems = $("#quote-items");
 const quoteForm = $("#quote-form");
@@ -10,18 +9,21 @@ const quoteStatus = $("#quote-status");
 const byId = new Map(catalogue.map((product) => [product.id, product]));
 const selection = new Map();
 const storageKey = "bf-devis-v1";
-try {
-  const stored = JSON.parse(localStorage.getItem(storageKey) || "[]");
-  if (Array.isArray(stored)) {
+function loadSelection() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(storageKey) || "[]");
+    if (!Array.isArray(stored)) return;
+    selection.clear();
     for (const entry of stored) {
       if (!Array.isArray(entry)) continue;
       const [id, amount] = entry;
       if (byId.has(id) && Number.isInteger(amount) && amount > 0) selection.set(id, amount);
     }
+  } catch {
+    // La commande reste utilisable quand le stockage du navigateur est indisponible.
   }
-} catch {
-  // Le devis reste utilisable quand le stockage du navigateur est indisponible.
 }
+loadSelection();
 
 function element(tag, content, className) {
   const node = document.createElement(tag);
@@ -42,7 +44,7 @@ function normalize(text) {
 }
 
 const categories = [...new Set(catalogue.map((product) => product.category))].sort((a,b) => a.localeCompare(b, "fr"));
-for (const name of categories) category.add(new Option(name, name));
+
 
 function renderCatalogue() {
   const terms = normalize(search.value).split(" ").filter(Boolean);
@@ -57,42 +59,31 @@ function renderCatalogue() {
     const card = element("article", "", "card");
     const photo = element("img", "", "product-photo");
     photo.src = product.photo;
-    photo.alt = product.name;
+    photo.alt = "";
     if (index >= 4) photo.loading = "lazy";
+    const href = `produits/${encodeURIComponent(product.id)}.html`;
+    const photoLink = element("a", "", "product-photo-button");
+    photoLink.href = href;
+    photoLink.setAttribute("aria-label", `Voir la fiche : ${product.name}`);
+    photoLink.append(photo);
     const body = element("div", "", "card-body");
     const actions = element("div", "", "card-actions");
-    const details = action("Voir la fiche", "button neutral", () => showProduct(product));
+    const details = element("a", "Voir la fiche", "button neutral");
+    details.href = href;
     details.setAttribute("aria-label", `Voir la fiche : ${product.name}`);
     const add = action("Ajouter à la commande", "button dark", () => addProduct(product));
     add.setAttribute("aria-label", `Ajouter à la commande : ${product.name}`);
     actions.append(details, add);
-    body.append(element("p", product.category, "meta"), element("h3", product.name));
+    const heading = element("h3");
+    const title = element("a", product.name, "product-title-button");
+    title.href = href;
+    heading.append(title);
+    body.append(element("p", product.category, "meta"), heading);
     if (product.ref) body.append(element("p", `Réf. ${product.ref}`, "meta"));
     body.append(actions);
-    card.append(photo, body);
+    card.append(photoLink, body);
     return card;
   }));
-}
-
-function showProduct(product) {
-  $("#product-title").textContent = product.name;
-  const photo = element("img");
-  photo.src = product.photo;
-  photo.alt = product.name;
-  const actions = element("div", "", "detail-actions");
-  if (product.file) {
-    const documentLink = element("a", product.file.endsWith(".pdf") ? "Consulter la fiche technique (PDF)" : "Consulter la fiche technique (image)", "button neutral");
-    documentLink.href = product.file;
-    documentLink.target = "_blank";
-    documentLink.rel = "noopener";
-    actions.append(documentLink);
-  }
-  actions.append(action("Ajouter à la commande", "button dark", () => {
-    productDialog.close();
-    addProduct(product);
-  }));
-  $("#product-detail").replaceChildren(photo, element("p", product.ref ? `${product.category} · Réf. ${product.ref}` : product.category, "meta"), element("p", product.description), actions);
-  productDialog.showModal();
 }
 
 function saveSelection() {
@@ -162,14 +153,25 @@ function renderQuote() {
   }));
 }
 
-search.addEventListener("input", renderCatalogue);
-category.addEventListener("change", renderCatalogue);
-$("#reset-filters").addEventListener("click", () => {
-  search.value = "";
-  category.value = "";
+if (search) {
+  for (const name of categories) category.add(new Option(name, name));
+  const linkedCategory = new URLSearchParams(window.location.search).get("categorie");
+  if (categories.includes(linkedCategory)) category.value = linkedCategory;
+  search.addEventListener("input", renderCatalogue);
+  category.addEventListener("change", renderCatalogue);
+  $("#reset-filters").addEventListener("click", () => {
+    search.value = "";
+    category.value = "";
+    renderCatalogue();
+    search.focus();
+  });
   renderCatalogue();
-  search.focus();
-});
+}
+const pageAdd = $("#add-page-product");
+if (pageAdd) {
+  const product = byId.get(pageAdd.dataset.productId);
+  if (product) pageAdd.addEventListener("click", () => addProduct(product));
+}
 function openOrder() {
   renderQuote();
   quoteStatus.textContent = "";
@@ -234,59 +236,67 @@ quoteForm.addEventListener("submit", (event) => {
 });
 
 const inspection = $("#inspection");
-const checks = [...inspection.querySelectorAll("input[type=checkbox]")];
-function updateChecks() {
-  const count = checks.filter((check) => check.checked).length;
-  $("#check-progress").value = `${count} sur ${checks.length} vérifiés`;
+if (inspection) {
+  const checks = [...inspection.querySelectorAll("input[type=checkbox]")];
+  function updateChecks() {
+    const count = checks.filter((check) => check.checked).length;
+    $("#check-progress").value = `${count} sur ${checks.length} vérifiés`;
+  }
+  inspection.addEventListener("change", updateChecks);
+  inspection.addEventListener("reset", () => requestAnimationFrame(updateChecks));
+  window.addEventListener("pageshow", updateChecks);
 }
-inspection.addEventListener("change", updateChecks);
-inspection.addEventListener("reset", () => requestAnimationFrame(updateChecks));
-window.addEventListener("pageshow", updateChecks);
 saveSelection();
-renderCatalogue();
-
+window.addEventListener("pageshow", (event) => {
+  if (!event.persisted) return;
+  loadSelection();
+  saveSelection();
+  if (quoteDialog.open) renderQuote();
+});
 
 const photoControls = $(".hero-controls");
-const photoChoices = [...photoControls.querySelectorAll(".slide-choice")];
-const heroPhotos = [...document.querySelectorAll(".hero-photo")];
-const photoToggle = $(".slide-toggle");
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-let activePhoto = 0;
-let autoplay = !reducedMotion.matches;
-let photoTimer;
+if (photoControls) {
+  const photoChoices = [...photoControls.querySelectorAll(".slide-choice")];
+  const heroPhotos = [...document.querySelectorAll(".hero-photo")];
+  const photoToggle = $(".slide-toggle");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let activePhoto = 0;
+  let autoplay = !reducedMotion.matches;
+  let photoTimer;
 
-function showPhoto(index) {
-  heroPhotos[activePhoto].classList.remove("active");
-  photoChoices[activePhoto].setAttribute("aria-pressed", "false");
-  activePhoto = index;
-  heroPhotos[activePhoto].classList.add("active");
-  photoChoices[activePhoto].setAttribute("aria-pressed", "true");
-}
-
-function schedulePhotos() {
-  clearInterval(photoTimer);
-  photoToggle.textContent = autoplay ? "Pause" : "Lecture";
-  photoToggle.setAttribute("aria-label", autoplay ? "Mettre les photos en pause" : "Relancer le défilement des photos");
-  if (autoplay && !document.hidden) {
-    photoTimer = setInterval(() => showPhoto((activePhoto + 1) % heroPhotos.length), 5500);
+  function showPhoto(index) {
+    heroPhotos[activePhoto].classList.remove("active");
+    photoChoices[activePhoto].setAttribute("aria-pressed", "false");
+    activePhoto = index;
+    heroPhotos[activePhoto].classList.add("active");
+    photoChoices[activePhoto].setAttribute("aria-pressed", "true");
   }
-}
 
-photoChoices.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    autoplay = false;
-    showPhoto(index);
+  function schedulePhotos() {
+    clearInterval(photoTimer);
+    photoToggle.textContent = autoplay ? "Pause" : "Lecture";
+    photoToggle.setAttribute("aria-label", autoplay ? "Mettre les photos en pause" : "Relancer le défilement des photos");
+    if (autoplay && !document.hidden) {
+      photoTimer = setInterval(() => showPhoto((activePhoto + 1) % heroPhotos.length), 5500);
+    }
+  }
+
+  photoChoices.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      autoplay = false;
+      showPhoto(index);
+      schedulePhotos();
+    });
+  });
+  photoToggle.addEventListener("click", () => {
+    autoplay = !autoplay;
     schedulePhotos();
   });
-});
-photoToggle.addEventListener("click", () => {
-  autoplay = !autoplay;
+  reducedMotion.addEventListener("change", () => {
+    autoplay = !reducedMotion.matches;
+    schedulePhotos();
+  });
+  document.addEventListener("visibilitychange", schedulePhotos);
+  photoControls.hidden = false;
   schedulePhotos();
-});
-reducedMotion.addEventListener("change", () => {
-  autoplay = !reducedMotion.matches;
-  schedulePhotos();
-});
-document.addEventListener("visibilitychange", schedulePhotos);
-photoControls.hidden = false;
-schedulePhotos();
+}

@@ -23,7 +23,7 @@ const catalogue = [
     "category": "Chaussures et bottes",
     "name": "Chaussures Protect S3 SRC",
     "description": "Tige en cuir, embout composite 200 J et pointures 37 à 46.",
-    "photo": "assets/produits/29.webp",
+    "photo": "assets/produits/29-photo-catalogue.webp",
     "file": "assets/fiches/29.pdf"
   },
   {
@@ -32,7 +32,7 @@ const catalogue = [
     "category": "Gants",
     "name": "Gants de manutention de précision",
     "description": "Support polyester et paume enduite.",
-    "photo": "assets/produits/14.webp",
+    "photo": "assets/produits/14-photo-catalogue.webp",
     "file": "assets/fiches/14.pdf"
   },
   {
@@ -41,7 +41,7 @@ const catalogue = [
     "category": "Antichute",
     "name": "Harnais de sécurité",
     "description": "Anneau dorsal et sangles réglables. EN 361:2002 indiquée sur la fiche.",
-    "photo": "assets/produits/7.webp",
+    "photo": "assets/produits/7-photo-catalogue.webp",
     "file": "assets/fiches/7.pdf"
   },
   {
@@ -50,7 +50,7 @@ const catalogue = [
     "category": "Protection respiratoire",
     "name": "Masque pliable ROFA FFP2 sans soupape",
     "description": "Version sans soupape du masque pliable FFP2 ROFA. Dimensions de la fiche : 145 × 105 mm.",
-    "photo": "assets/produits/16.webp",
+    "photo": "assets/produits/16-photo-catalogue.webp",
     "file": "assets/fiches/16.pdf"
   },
   {
@@ -68,7 +68,7 @@ const catalogue = [
     "category": "Signalisation",
     "name": "Chaîne de balisage en plastique",
     "description": "Maillons de 6 ou 8 mm, rouge et blanc ou jaune et noir.",
-    "photo": "assets/produits/40.webp",
+    "photo": "assets/produits/chaine-8106-photo.webp",
     "file": "assets/fiches/40.pdf"
   },
   {
@@ -77,7 +77,7 @@ const catalogue = [
     "category": "Vêtements de travail",
     "name": "Ensemble veste et pantalon Ariane",
     "description": "Tenue de travail deux pièces avec veste à col montant.",
-    "photo": "assets/produits/39.webp",
+    "photo": "assets/produits/39-photo-catalogue.webp",
     "file": "assets/fiches/39.pdf"
   },
   {
@@ -95,7 +95,7 @@ const catalogue = [
     "category": "Chaussures et bottes",
     "name": "Bottes Dunlop Pricemastor",
     "description": "Bottes imperméables en PVC pour les travaux agricoles.",
-    "photo": "assets/produits/36.webp",
+    "photo": "assets/produits/36-photo-catalogue.webp",
     "file": "assets/fiches/36.pdf"
   },
   {
@@ -104,7 +104,7 @@ const catalogue = [
     "category": "Chaussures et bottes",
     "name": "Bottes Dunlop Protomastor",
     "description": "Bottes en PVC à embout acier pour l’agroalimentaire.",
-    "photo": "assets/produits/18.webp",
+    "photo": "assets/produits/18-photo-catalogue.webp",
     "file": "assets/fiches/18.pdf"
   },
   {
@@ -131,7 +131,7 @@ const catalogue = [
     "category": "Protection auditive",
     "name": "Bouchons d’oreille avec cordon plastique",
     "description": "Bouchons SL 1453 en TPE avec cordon plastique. La fiche indique un SNR de 31 dB.",
-    "photo": "assets/produits/8.webp",
+    "photo": "assets/produits/8-photo-catalogue.webp",
     "file": "assets/fiches/8.pdf"
   },
   {
@@ -140,7 +140,7 @@ const catalogue = [
     "category": "Protection auditive",
     "name": "Casque antibruit NBR01",
     "description": "SNR 34 dB et EN 352-1:2020 indiqués sur la fiche.",
-    "photo": "assets/produits/48.webp",
+    "photo": "assets/produits/48-photo-catalogue.webp",
     "file": "assets/fiches/48.pdf"
   },
   {
@@ -158,7 +158,7 @@ const catalogue = [
     "category": "Casques et lunettes",
     "name": "Casque de sécurité ventilé",
     "description": "Coque PEHD, suspension à quatre points, tour de tête de 54 à 64 cm.",
-    "photo": "assets/produits/10.webp",
+    "photo": "assets/produits/vst-jaune-photo.webp",
     "file": "assets/fiches/10.pdf"
   },
   {
@@ -176,7 +176,7 @@ const catalogue = [
     "category": "Chaussures et bottes",
     "name": "Chaussures de sécurité ARS 6029",
     "description": "Tige cuir, semelle PU bidensité et embout acier. Pointures 37 à 46.",
-    "photo": "assets/produits/32.webp",
+    "photo": "assets/produits/32-photo-catalogue.webp",
     "file": "assets/fiches/32.pdf"
   },
   {
@@ -185,7 +185,7 @@ const catalogue = [
     "category": "Chaussures et bottes",
     "name": "Chaussures de sécurité BS-5000",
     "description": "Tige en cuir, semelle PU bidensité, embout et intercalaire en acier. Pointures 36 à 46. Classement S1P SRC indiqué sur la fiche.",
-    "photo": "assets/produits/21.webp",
+    "photo": "assets/produits/21-photo-catalogue.webp",
     "file": "assets/fiches/21.pdf",
     "searchAliases": "BS-5000-1"
   },
@@ -195,7 +195,7 @@ const catalogue = [
     "category": "Chaussures et bottes",
     "name": "Chaussures de sécurité Irona 300",
     "description": "Cuir grainé, embout acier et semelle PU bidensité. Pointures 39 à 46.",
-    "photo": "assets/produits/27.webp",
+    "photo": "assets/produits/27-photo-catalogue.webp",
     "file": "assets/fiches/27.pdf"
   },
   {
@@ -222,7 +222,7 @@ const catalogue = [
     "category": "Protection auditive",
     "name": "Coquilles antibruit pour casque",
     "description": "Modèle monté sur casque avec coussinets remplaçables. Vérifier la compatibilité.",
-    "photo": "assets/produits/42.webp",
+    "photo": "assets/produits/sl1451-photo-integrale.webp",
     "file": "assets/fiches/42.pdf"
   },
   {
@@ -249,7 +249,7 @@ const catalogue = [
     "category": "Vêtements de travail",
     "name": "Ensemble de pluie AR-5200",
     "description": "Veste à capuche et pantalon en polyamide enduit PVC. M (AR-5200), L (AR-5210), XL (AR-5220), XXL (AR-5230).",
-    "photo": "assets/produits/37.webp",
+    "photo": "assets/produits/37-photo-catalogue.webp",
     "file": "assets/fiches/37.pdf"
   },
   {
@@ -258,7 +258,7 @@ const catalogue = [
     "category": "Vêtements de travail",
     "name": "Ensemble professionnel anti-froid",
     "description": "Veste à capuche et salopette matelassées. Coloris noir à finitions rouges.",
-    "photo": "assets/produits/3.webp",
+    "photo": "assets/produits/3-photo-catalogue.webp",
     "file": "assets/fiches/3.jpg"
   },
   {
@@ -312,7 +312,7 @@ const catalogue = [
     "category": "Gants",
     "name": "Gants anticoupure de précision",
     "description": "Support tricoté HPPE. Niveau E/5 indiqué sur la fiche.",
-    "photo": "assets/produits/17.webp",
+    "photo": "assets/produits/17-photo-catalogue.webp",
     "file": "assets/fiches/17.pdf"
   },
   {
@@ -321,7 +321,7 @@ const catalogue = [
     "category": "Gants",
     "name": "Gants nitrile pour l’agroalimentaire",
     "description": "Gant vert entièrement enduit de nitrile.",
-    "photo": "assets/produits/28.webp",
+    "photo": "assets/produits/28-photo-catalogue.webp",
     "file": "assets/fiches/28.pdf"
   },
   {
@@ -339,7 +339,7 @@ const catalogue = [
     "category": "Casques et lunettes",
     "name": "Lunettes de protection PROSSA",
     "description": "Oculaire panoramique incolore en polycarbonate.",
-    "photo": "assets/produits/23.webp",
+    "photo": "assets/produits/23-photo-catalogue.webp",
     "file": "assets/fiches/23.pdf"
   },
   {
@@ -366,7 +366,7 @@ const catalogue = [
     "category": "Vêtements de travail",
     "name": "Parka marine à bandes",
     "description": "Parka en polyamide avec bandes. Quatre références.",
-    "photo": "assets/produits/2.webp",
+    "photo": "assets/produits/2-photo-catalogue.webp",
     "file": "assets/fiches/2.pdf"
   },
   {
@@ -375,7 +375,7 @@ const catalogue = [
     "category": "Casques et lunettes",
     "name": "Lunettes Pupille incolores",
     "description": "Oculaire monobloc en polycarbonate, traitements antirayures et antibuée. Taille unique.",
-    "photo": "assets/produits/pupille-c.webp",
+    "photo": "assets/produits/pupille-c-photo-catalogue.webp",
     "file": "assets/fiches/n0.pdf"
   },
   {
@@ -384,7 +384,7 @@ const catalogue = [
     "category": "Casques et lunettes",
     "name": "Lunettes Pupille fumées",
     "description": "Oculaire fumé en polycarbonate, traitements antirayures et antibuée. Taille unique.",
-    "photo": "assets/produits/pupille-s.webp",
+    "photo": "assets/produits/pupille-s-photo-catalogue.webp",
     "file": "assets/fiches/n0.pdf"
   },
   {
@@ -402,7 +402,7 @@ const catalogue = [
     "category": "Chaussures et bottes",
     "name": "Bottes de sécurité Rigger S3 WR HRO SRC",
     "description": "Cuir de buffle pleine fleur, embout composite et semelle antiperforation. Pointures 37 à 47. La fiche indique P5400.",
-    "photo": "assets/produits/rigger.webp",
+    "photo": "assets/produits/rigger-photo-integrale.webp",
     "file": "assets/fiches/n2.pdf",
     "searchAliases": "C5400"
   },
@@ -421,7 +421,7 @@ const catalogue = [
     "category": "Casques et lunettes",
     "name": "Lunettes Uvée incolores",
     "description": "Lunettes monobloc avec protection frontale en TPE et traitements antibuée et antirayures.",
-    "photo": "assets/produits/uvee-c.webp",
+    "photo": "assets/produits/uvee-c-photo-catalogue.webp",
     "file": "assets/fiches/n4.pdf"
   },
   {
@@ -430,7 +430,7 @@ const catalogue = [
     "category": "Casques et lunettes",
     "name": "Lunettes Uvée fumées",
     "description": "Oculaire fumé, protection frontale en TPE et traitements antibuée et antirayures.",
-    "photo": "assets/produits/uvee-s.webp",
+    "photo": "assets/produits/uvee-s-photo-catalogue.webp",
     "file": "assets/fiches/n4.pdf"
   },
   {
@@ -439,7 +439,7 @@ const catalogue = [
     "category": "Vêtements de travail",
     "name": "Gilet haute visibilité Fluo",
     "description": "Gilet polyester avec bandes rétroréfléchissantes cousues et fermeture autoagrippante. Jaune fluo ou orange fluo, taille unique.",
-    "photo": "assets/produits/fluo.webp",
+    "photo": "assets/produits/c3100-photo-integrale.webp",
     "file": "assets/fiches/n5.pdf"
   },
   {
@@ -448,7 +448,7 @@ const catalogue = [
     "category": "Vêtements de travail",
     "name": "Gilet haute visibilité Index",
     "description": "Gilet polyester jaune fluo et bleu marine avec bandes sur le corps et les épaules. Tailles M à XXL.",
-    "photo": "assets/produits/index.webp",
+    "photo": "assets/produits/c3600-photo-integrale.webp",
     "file": "assets/fiches/n6.pdf"
   },
   {
@@ -457,7 +457,7 @@ const catalogue = [
     "category": "Chaussures et bottes",
     "name": "Chaussures montantes Griffin S3 SRC ESD",
     "description": "Tige en tissu PUTEK avec renfort en nubuck, semelle PU double densité et construction sans métal selon la fiche.",
-    "photo": "assets/produits/griffin.webp",
+    "photo": "assets/produits/griffin-photo-integrale.webp",
     "file": "assets/fiches/n7.pdf"
   },
   {
@@ -466,7 +466,7 @@ const catalogue = [
     "category": "Vêtements de travail",
     "name": "Ensemble de pluie à bandes",
     "description": "Veste à capuche et pantalon en polyamide enduit PVC, avec bandes réfléchissantes. M (AR-5300), L (AR-5310), XL (AR-5320), XXL (AR-5330).",
-    "photo": "assets/produits/rain-reflective.webp",
+    "photo": "assets/produits/rain-reflective-photo-catalogue.webp",
     "file": "assets/fiches/n9.pdf"
   },
   {
@@ -475,7 +475,7 @@ const catalogue = [
     "category": "Vêtements de travail",
     "name": "Gilet haute visibilité à bandes 3M",
     "description": "Polyester fluorescent 200 g/m² et fermeture à glissière. Tailles M à XXL selon la référence.",
-    "photo": "assets/produits/vest-3m.webp",
+    "photo": "assets/produits/vest-3m-photo-catalogue.webp",
     "file": "assets/fiches/n10.pdf"
   },
   {
@@ -484,7 +484,7 @@ const catalogue = [
     "category": "Chaussures et bottes",
     "name": "Chaussures de sécurité BS-3000",
     "description": "Daim perforé, doublure en maille 3D, embout et intercalaire en acier. Pointures 36 à 46, classement S1P SRC indiqué sur la fiche.",
-    "photo": "assets/produits/bs3000.webp",
+    "photo": "assets/produits/bs3000-photo-catalogue.webp",
     "file": "assets/fiches/n12.pdf"
   },
   {
@@ -493,7 +493,7 @@ const catalogue = [
     "category": "Chaussures et bottes",
     "name": "Chaussures de sécurité VIP S3 SRC",
     "description": "Tige en cuir de buffle, embout composite 200 J et semelle PU bidensité. Pointures 37 à 46.",
-    "photo": "assets/produits/vip.webp",
+    "photo": "assets/produits/vip-photo-catalogue.webp",
     "file": "assets/fiches/vip.pdf"
   },
   {
@@ -502,7 +502,7 @@ const catalogue = [
     "category": "Chaussures et bottes",
     "name": "Chaussures de sécurité Sport S1P SRC",
     "description": "Tige en tissu PUTEK, embout composite 200 J et semelle PU bidensité. Pointures 37 à 46.",
-    "photo": "assets/produits/sport.webp",
+    "photo": "assets/produits/sport-photo-catalogue.webp",
     "file": "assets/fiches/sport.pdf"
   },
   {
@@ -511,7 +511,7 @@ const catalogue = [
     "category": "Chaussures et bottes",
     "name": "Chaussures de sécurité Scratch S1P SRC",
     "description": "Tige en microfibre, embout composite 200 J et semelle PU bidensité. Fermeture autoagrippante.",
-    "photo": "assets/produits/scratch.webp",
+    "photo": "assets/produits/scratch-photo-catalogue.webp",
     "file": "assets/fiches/scratch.pdf"
   },
   {
@@ -529,7 +529,7 @@ const catalogue = [
     "category": "Protection respiratoire",
     "name": "Masque pliable ROFA FFP2 avec soupape",
     "description": "Version avec soupape du masque pliable FFP2 ROFA. Dimensions de la fiche : 145 × 105 mm.",
-    "photo": "assets/produits/rofa-valve.webp",
+    "photo": "assets/produits/rofa-valve-photo-catalogue.webp",
     "file": "assets/fiches/16.pdf"
   },
   {
@@ -538,7 +538,7 @@ const catalogue = [
     "category": "Protection auditive",
     "name": "Bouchons d’oreille avec cordon textile",
     "description": "Bouchons SL 1453 en TPE avec cordon textile. La fiche indique un SNR de 31 dB.",
-    "photo": "assets/produits/sl1453-textile.webp",
+    "photo": "assets/produits/sl1453-textile-photo-catalogue.webp",
     "file": "assets/fiches/8.pdf"
   },
   {
@@ -778,5 +778,19 @@ const catalogue = [
     "category": "Chaussures et bottes",
     "description": "Chaussures basses à lacets, tige grise et doublure rose. Précisez la pointure souhaitée dans votre demande.",
     "photo": "assets/produits/chaussure-gris-rose.webp"
+  },
+  {
+    "id": "casque-ventile-rouge",
+    "name": "Casque de chantier ventilé rouge",
+    "category": "Casques et lunettes",
+    "description": "Casque rouge à coque ventilée et visière courte.",
+    "photo": "assets/produits/casque-ventile-rouge.webp"
+  },
+  {
+    "id": "casque-ventile-bleu",
+    "name": "Casque de chantier ventilé bleu",
+    "category": "Casques et lunettes",
+    "description": "Casque bleu à coque ventilée avec jugulaire grise visible.",
+    "photo": "assets/produits/casque-ventile-bleu.webp"
   }
 ];
